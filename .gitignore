@@ -1,0 +1,8 @@
+.idea
+target
+
+*.iml
+*.html
+*.js
+*.css
+package-list
