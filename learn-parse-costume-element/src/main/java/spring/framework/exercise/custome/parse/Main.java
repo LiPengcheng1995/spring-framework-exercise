@@ -1,7 +1,10 @@
 package spring.framework.exercise.custome.parse;
 
+import com.sun.xml.internal.bind.v2.util.XmlFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.ClassPathResource;
 import spring.framework.exercise.custome.parse.domain.User;
 
 /**
@@ -14,8 +17,8 @@ import spring.framework.exercise.custome.parse.domain.User;
  */
 public class Main {
     public static void main(String[] args){
-        ApplicationContext context = new ClassPathXmlApplicationContext("Spring-test.xml");
-        User user = (User) context.getBean("zhangsan");
+        XmlBeanFactory xmlBeanFactory = new XmlBeanFactory(new ClassPathResource("Spring-test.xml"));
+        User user = (User) xmlBeanFactory.getBean("zhangsan");
         System.out.println("姓名: "+ user.getUserName()+"  ,  邮箱："+user.getEmail());
     }
 }
