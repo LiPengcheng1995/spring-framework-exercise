@@ -3,7 +3,7 @@ package spring.framework.exercise.custome.parse.domain;
 /**
  * Package: spring.framework.exercise.custome.parse.domain
  * User: 李鹏程
- * Email: lipengcheng3@jd.com
+ * Email: lipengcheng1995@gmail.com
  * Date: 2019-06-06
  * Time: 17:42
  * Description:

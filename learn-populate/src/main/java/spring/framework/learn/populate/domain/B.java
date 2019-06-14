@@ -3,7 +3,7 @@ package spring.framework.learn.populate.domain;
 /**
  * Package: spring.framework.learn.populate.domain
  * User: 李鹏程
- * Email: lipengcheng3@jd.com
+ * Email: lipengcheng1995@gmail.com
  * Date: 2019-06-14
  * Time: 16:29
  * Description:

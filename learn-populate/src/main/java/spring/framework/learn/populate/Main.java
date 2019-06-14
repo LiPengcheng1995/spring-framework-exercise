@@ -7,7 +7,7 @@ import spring.framework.learn.populate.domain.A;
 /**
  * Package: spring.framework.learn.populate
  * User: 李鹏程
- * Email: lipengcheng3@jd.com
+ * Email: lipengcheng1995@gmail.com
  * Date: 2019-06-14
  * Time: 16:29
  * Description:
