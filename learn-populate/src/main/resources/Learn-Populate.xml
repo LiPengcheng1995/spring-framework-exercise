@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="a" class="spring.framework.learn.populate.domain.A">
+        <property name="field_a_1" value="这个是a_1的值"/>
+        <property name="field_a_2" value="这个是a_2的值"/>
+        <property name="field_a_3" value="这个是a_3的值"/>
+        <property name="b" ref="b"/>
+    </bean>
+
+    <bean id="b" class="spring.framework.learn.populate.domain.B">
+        <property name="field_b_1" value="这个是b_1的值"/>
+    </bean>
+</beans>
