@@ -11,6 +11,7 @@
     <modules>
         <module>learn-parse-costume-element</module>
         <module>learn-populate</module>
+        <module>learn-extend</module>
     </modules>
 
     <properties>
