@@ -1,7 +1,6 @@
 /**
  * Package: PACKAGE_NAME
  * User: 李鹏程
- * Email: lipengcheng3@jd.com
  * Date: 2019-07-26
  * Time: 10:00
  * Description:

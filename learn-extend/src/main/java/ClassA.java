@@ -3,7 +3,6 @@ import java.lang.reflect.Field;
 /**
  * Package: PACKAGE_NAME
  * User: 李鹏程
- * Email: lipengcheng3@jd.com
  * Date: 2019-07-26
  * Time: 09:59
  * Description:

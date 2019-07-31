@@ -7,7 +7,6 @@ import java.sql.*;
 /**
  * Package: PACKAGE_NAME
  * User: 李鹏程
- * Email: lipengcheng3@jd.com
  * Date: 2019-07-30
  * Time: 21:27
  * Description:
