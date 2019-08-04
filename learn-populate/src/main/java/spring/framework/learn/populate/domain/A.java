@@ -1,5 +1,7 @@
 package spring.framework.learn.populate.domain;
 
+import org.springframework.beans.factory.InitializingBean;
+
 /**
  * Package: spring.framework.learn.populate.domain
  * User: 李鹏程
@@ -8,7 +10,7 @@ package spring.framework.learn.populate.domain;
  * Time: 16:29
  * Description:
  */
-public class A {
+public class A implements InitializingBean {
     private String field_a_1;
     private String field_a_2;
     private String field_a_3;
@@ -44,5 +46,13 @@ public class A {
 
     public void setB(B b) {
         this.b = b;
+    }
+
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("正在调用 A 的 InitializingBean 的初始化钩子");
+    }
+
+    public void justInit(){
+        System.out.println("这是随便的一个函数，用 xml 配置调用");
     }
 }
