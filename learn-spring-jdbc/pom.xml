@@ -11,6 +11,7 @@
 
     <artifactId>learn-spring-jdbc</artifactId>
 
+
     <dependencies>
 
         <dependency>
@@ -39,6 +40,10 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
         </dependency>
     </dependencies>
 
