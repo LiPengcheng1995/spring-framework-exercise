@@ -1,8 +1,10 @@
+package domain;
+
 import java.util.Date;
 
 /**
  * Package: PACKAGE_NAME
- * User: 李鹏程
+ * domain.User: 李鹏程
  * Date: 2019-07-31
  * Time: 20:45
  * Description:

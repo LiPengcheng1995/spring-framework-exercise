@@ -1,6 +1,10 @@
+package mapper;
+
+import domain.User;
+
 /**
  * Package: PACKAGE_NAME
- * User: 李鹏程
+ * domain.User: 李鹏程
  * Date: 2019-08-06
  * Time: 15:26
  * Description:

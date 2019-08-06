@@ -1,17 +1,12 @@
 import com.alibaba.fastjson.JSON;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import domain.User;
+import mapper.UserMapper;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.io.IOException;
-import java.io.Reader;
-
 /**
  * Package: PACKAGE_NAME
- * User: 李鹏程
+ * domain.User: 李鹏程
  * Date: 2019-08-06
  * Time: 15:36
  * Description:

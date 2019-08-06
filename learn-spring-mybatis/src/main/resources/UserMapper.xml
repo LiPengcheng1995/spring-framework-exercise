@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="UserMapper">
-    <select id="getById" parameterType="long" resultType="User">
+<mapper namespace="mapper.UserMapper">
+    <select id="getById" parameterType="long" resultType="domain.User">
         select * from form where form_id = #{id}
     </select>
 
-    <insert id="insertUser" parameterType="User"
+    <insert id="insertUser" parameterType="domain.User"
             useGeneratedKeys="true" keyColumn="form_id" keyProperty="formId">
         INSERT INTO learn.form (creator, is_deleted, modifier, business_id, form_name, template_id, creation_code)
         VALUES (#{formId},#{isDeleted},#{modifier},#{businessId},#{formName},#{templateId},#{creationCode})
