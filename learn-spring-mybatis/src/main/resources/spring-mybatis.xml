@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 1、声明数据源对象：C3P0连接池 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <!-- 加载jdbc驱动 -->
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+        <!-- jdbc连接地址 -->
+        <property name="jdbcUrl" value="jdbc:mysql://104.248.236.89:3306/learn"/>
+        <!-- 连接数据库的用户名 -->
+        <property name="user" value="lpc_test"/>
+        <!-- 连接数据库的密码 -->
+        <property name="password" value="12345aA)"/>
+        <!-- 数据库的初始化连接数 -->
+        <property name="initialPoolSize" value="3"/>
+        <!-- 数据库的最大连接数 -->
+        <property name="maxPoolSize" value="10"/>
+        <!-- 数据库最多执行的事务 -->
+        <property name="maxStatements" value="100"/>
+        <!-- 连接数量不够时每次的增量 -->
+        <property name="acquireIncrement" value="2"/>
+    </bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:MyBatis-config.xml"/>
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="UserMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+</beans>
