@@ -45,7 +45,7 @@ public class Main {
         User queryResult = userMapper.getById(user.getFormId());
         System.out.println(JSON.toJSONString(queryResult));
 
-        sqlSession.commit();
-        sqlSession.close();
+        sqlSession.commit();// TODO 这个必须有，否则写不进去
+        sqlSession.close();// 关闭数据库连接
     }
 }
