@@ -1,16 +1,9 @@
 import com.alibaba.fastjson.JSON;
 import domain.User;
-import mapper.UserMapper;
-import org.apache.ibatis.cursor.Cursor;
 import org.mybatis.spring.batch.MyBatisCursorItemReader;
 import org.springframework.batch.item.ExecutionContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Package: PACKAGE_NAME
@@ -25,14 +18,14 @@ public class MainCursor {
         // 加载Spring
         ApplicationContext ac = new ClassPathXmlApplicationContext("spring-mybatis.xml");
 
-        MyBatisCursorItemReader cursorReader = ac.getBean("myMyBatisCursorItemReader",MyBatisCursorItemReader.class);
+        MyBatisCursorItemReader cursorReader = ac.getBean("myMyBatisCursorItemReader", MyBatisCursorItemReader.class);
 
         //打开
         cursorReader.open(new ExecutionContext());
         User user;
-        int i=0;
-        while ((user= (User) cursorReader.read())!=null) {
-            System.out.println(++i+"="+JSON.toJSONString(user));
+        int i = 0;
+        while ((user = (User) cursorReader.read()) != null) {
+            System.out.println(++i + "=" + JSON.toJSONString(user));
         }
         cursorReader.close();
     }

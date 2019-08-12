@@ -1,10 +1,9 @@
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-import com.mysql.cj.jdbc.MysqlConnectionPoolDataSource;
 
-import javax.sql.DataSource;
-import javax.sql.PooledConnection;
 import java.beans.PropertyVetoException;
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Package: PACKAGE_NAME
@@ -28,9 +27,9 @@ public class MainWithDataSource {
 
         Statement statement = ds.getConnection().createStatement();
         ResultSet resultSet = statement.executeQuery("select * from form");
-        while (resultSet.next()){
-            String x= resultSet.getString(1);
-            System.out.println("x="+x);
+        while (resultSet.next()) {
+            String x = resultSet.getString(1);
+            System.out.println("x=" + x);
         }
     }
 }

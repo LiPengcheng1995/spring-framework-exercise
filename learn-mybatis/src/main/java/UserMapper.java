@@ -6,6 +6,7 @@
  * Description:
  */
 public interface UserMapper {
-    Long  insertUser(User user);
+    Long insertUser(User user);
+
     User getById(Long id);
 }

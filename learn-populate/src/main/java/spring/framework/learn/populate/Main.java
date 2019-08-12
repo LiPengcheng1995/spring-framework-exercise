@@ -13,7 +13,7 @@ import spring.framework.learn.populate.domain.A;
  * Description:
  */
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         XmlBeanFactory xmlBeanFactory = new XmlBeanFactory(new ClassPathResource("Learn-Populate.xml"));
         A a = (A) xmlBeanFactory.getBean("a");
         System.out.println(a.getField_a_1());

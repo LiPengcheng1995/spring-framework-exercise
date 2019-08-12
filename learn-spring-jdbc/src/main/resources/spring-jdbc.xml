@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 1、声明数据源对象：C3P0连接池 -->
@@ -28,7 +28,7 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="userTemplate" class="UserTemplate" >
+    <bean id="userTemplate" class="UserTemplate">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
 </beans>
