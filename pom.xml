@@ -16,6 +16,7 @@
         <module>learn-spring-jdbc</module>
         <module>learn-mybatis</module>
         <module>learn-spring-mybatis</module>
+        <module>learn-spring-transaction</module>
     </modules>
 
     <properties>
@@ -70,6 +71,13 @@
                 <artifactId>mybatis</artifactId>
                 <version>3.4.6</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
 
         </dependencies>
 
