@@ -1,6 +1,7 @@
 package mapper;
 
 import domain.User;
+import org.apache.ibatis.cursor.Cursor;
 
 /**
  * Package: PACKAGE_NAME
@@ -10,6 +11,9 @@ import domain.User;
  * Description:
  */
 public interface UserMapper {
-    Long  insertUser(User user);
+    Long insertUser(User user);
+
     User getById(Long id);
+
+    Cursor<User> getAllScroll();
 }

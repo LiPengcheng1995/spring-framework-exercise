@@ -52,7 +52,7 @@ public class A implements InitializingBean {
         System.out.println("正在调用 A 的 InitializingBean 的初始化钩子");
     }
 
-    public void justInit(){
+    public void justInit() {
         System.out.println("这是随便的一个函数，用 xml 配置调用");
     }
 }

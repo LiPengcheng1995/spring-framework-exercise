@@ -12,5 +12,9 @@
         VALUES (#{formId},#{isDeleted},#{modifier},#{businessId},#{formName},#{templateId},#{creationCode})
     </insert>
 
+    <select id="getAllScroll" resultType="domain.User" fetchSize="-2147483648">
+        select  * from form
+    </select>
+
 
 </mapper>

@@ -15,7 +15,7 @@ import java.io.Reader;
  * Description:
  */
 public class Main {
-    public static void main(String args[]){
+    public static void main(String args[]) {
         // 加载资源文件及初始化 SqlSessionFactory
         String resource = "MyBatis-config.xml";
         Reader reader = null;
@@ -39,8 +39,8 @@ public class Main {
         user.setFormName("just a test 1");
 
         Long insertResult = userMapper.insertUser(user);
-        System.out.println("插入成功，返回的结果为："+insertResult);
-        System.out.println("参数为："+JSON.toJSONString(user));
+        System.out.println("插入成功，返回的结果为：" + insertResult);
+        System.out.println("参数为：" + JSON.toJSONString(user));
 
         User queryResult = userMapper.getById(user.getFormId());
         System.out.println(JSON.toJSONString(queryResult));

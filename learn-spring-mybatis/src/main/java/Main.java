@@ -12,11 +12,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * Description:
  */
 public class Main {
-    public static void main(String args[]){
+    public static void main(String args[]) {
         // 加载Spring
         ApplicationContext ac = new ClassPathXmlApplicationContext("spring-mybatis.xml");
 
-        UserMapper userMapper = ac.getBean("userMapper",UserMapper.class);
+        UserMapper userMapper = ac.getBean("userMapper", UserMapper.class);
 
         User user = new User();
         user.setBusinessId(123L);
@@ -26,8 +26,8 @@ public class Main {
         user.setFormName("just a test 1");
 
         Long insertResult = userMapper.insertUser(user);
-        System.out.println("插入成功，返回的结果为："+insertResult);
-        System.out.println("参数为："+JSON.toJSONString(user));
+        System.out.println("插入成功，返回的结果为：" + insertResult);
+        System.out.println("参数为：" + JSON.toJSONString(user));
 
         User queryResult = userMapper.getById(user.getFormId());
         System.out.println(JSON.toJSONString(queryResult));

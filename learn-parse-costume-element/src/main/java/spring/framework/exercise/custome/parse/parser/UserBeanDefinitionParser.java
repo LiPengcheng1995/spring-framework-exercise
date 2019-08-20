@@ -37,12 +37,12 @@ public class UserBeanDefinitionParser extends AbstractSingleBeanDefinitionParser
         String userName = element.getAttribute(XML_USER_NAME);
         String email = element.getAttribute(XML_USER_EMAIL);
 
-        if (StringUtils.hasLength(userName)){
-            builder.addPropertyValue(FIELD_USER_NAME,userName);
+        if (StringUtils.hasLength(userName)) {
+            builder.addPropertyValue(FIELD_USER_NAME, userName);
         }
 
-        if (StringUtils.hasLength(email)){
-            builder.addPropertyValue(FIELD_USER_EMAIL,email);
+        if (StringUtils.hasLength(email)) {
+            builder.addPropertyValue(FIELD_USER_EMAIL, email);
         }
     }
 

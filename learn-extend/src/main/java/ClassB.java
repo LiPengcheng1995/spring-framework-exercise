@@ -5,16 +5,16 @@
  * Time: 10:00
  * Description:
  */
-public class ClassB extends ClassA{
+public class ClassB extends ClassA {
 
     private ClassA a;
 
-    void B(){
-        System.out.println("Class B ,B");
+    public static void main(String[] args) {
+        new ClassB().test();
     }
 
-    public static void main(String[] args){
-        new ClassB().test();
+    void B() {
+        System.out.println("Class B ,B");
     }
 
 }

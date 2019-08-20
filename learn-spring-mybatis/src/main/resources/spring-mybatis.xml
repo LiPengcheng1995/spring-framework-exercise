@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- 1、声明数据源对象：C3P0连接池 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
@@ -27,11 +27,18 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-<!--    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
-<!--        <property name="mapperInterface" value="mapper.UserMapper"/>-->
-<!--        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
-<!--    </bean>-->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="mapper"/>
+    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="mapper.UserMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
+    <!--    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+    <!--        <property name="basePackage" value="mapper"/>-->
+    <!--    </bean>-->
+
+    <!--这种声明确实比较怪异啊-->
+    <bean id="myMyBatisCursorItemReader" class="org.mybatis.spring.batch.MyBatisCursorItemReader">
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+        <property name="queryId" value="mapper.UserMapper.getAllScroll"/>
     </bean>
 </beans>
