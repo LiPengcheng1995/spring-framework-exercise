@@ -17,6 +17,7 @@
         <module>learn-mybatis</module>
         <module>learn-spring-mybatis</module>
         <module>learn-spring-transaction</module>
+        <module>learn-transaction</module>
     </modules>
 
     <properties>
