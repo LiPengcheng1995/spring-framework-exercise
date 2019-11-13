@@ -1,5 +1,7 @@
 package spring.framework.exercise.test.pool;
 
+import java.util.Observable;
+import java.util.Observer;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -26,6 +28,14 @@ public class Main {
         System.out.println("123");
         System.out.println("123");
         executor.shutdownNow();
+
+        Observable x = new Observable();
+        Observer y = new Observer() {
+            @Override
+            public void update(Observable o, Object arg) {
+
+            }
+        };
 
     }
 }
