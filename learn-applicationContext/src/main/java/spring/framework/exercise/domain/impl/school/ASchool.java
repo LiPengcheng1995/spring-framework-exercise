@@ -19,18 +19,19 @@ import java.util.List;
  */
 @Component
 public class ASchool implements School {
-    @Value("${school.a.name}")
+//    @Value("${school.a.name}")
     private String schoolName;
 
-    @Autowired
-//    @Resource
-    private Person student;
+//    @Autowired
+//    @Resource(name = "testBean")
+    @Resource
+    private Person testBean;
 
-    @Autowired
+//    @Autowired
     //    @Resource
     private Person teacher;
 
-    @Autowired
+//    @Autowired
     //    @Resource
     private List<Person> personList;
 
