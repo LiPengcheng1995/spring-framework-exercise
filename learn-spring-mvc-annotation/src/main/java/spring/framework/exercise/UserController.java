@@ -1,9 +1,11 @@
 package spring.framework.exercise;
 
+import com.alibaba.fastjson.JSON;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -14,16 +16,16 @@ import org.springframework.web.servlet.ModelAndView;
  * Time: 10:54
  * Description:
  */
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
 
     @RequestMapping(path = "/{id}",method = RequestMethod.GET)
-    protected ModelAndView hahaha(@PathVariable String id){
+    protected String hahaha(@PathVariable String id){
         User user = new User();
         user.setId(id);
-        user.setName("张三");
+        user.setName("zhangsan");
         user.setAge(100);
-        return new ModelAndView("UserView","user",user);
+        return JSON.toJSONString(user);
     }
 }

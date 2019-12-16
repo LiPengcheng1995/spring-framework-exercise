@@ -11,8 +11,6 @@
 
     <artifactId>learn-spring-mvc-annotation</artifactId>
 
-    <packaging>war</packaging>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
