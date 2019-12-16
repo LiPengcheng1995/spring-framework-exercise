@@ -1,13 +1,14 @@
+package spring.framework.exercise;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.AbstractController;
 
 /**
  * Package: PACKAGE_NAME
- * User: 李鹏程
+ * spring.framework.exercise.User: 李鹏程
  * Email: lipengcheng3@jd.com
  * Date: 2019/9/4
  * Time: 10:54
@@ -18,7 +19,7 @@ import org.springframework.web.servlet.mvc.AbstractController;
 public class UserController {
 
     @RequestMapping(path = "/{id}",method = RequestMethod.GET)
-    protected ModelAndView handleRequestInternal(@PathVariable String id){
+    protected ModelAndView hahaha(@PathVariable String id){
         User user = new User();
         user.setId(id);
         user.setName("张三");

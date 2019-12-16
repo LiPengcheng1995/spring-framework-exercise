@@ -1,6 +1,8 @@
+package spring.framework.exercise;
+
 /**
  * Package: PACKAGE_NAME
- * User: 李鹏程
+ * spring.framework.exercise.User: 李鹏程
  * Email: lipengcheng3@jd.com
  * Date: 2019/9/4
  * Time: 10:54
