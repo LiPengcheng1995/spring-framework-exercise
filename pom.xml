@@ -20,6 +20,7 @@
         <module>learn-transaction</module>
         <module>learn-spring-mvc</module>
         <module>learn-applicationContext</module>
+        <module>learn-spring-mvc-annotation</module>
     </modules>
 
     <properties>

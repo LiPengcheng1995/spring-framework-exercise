@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    <!--使用 ContextLoaderListener 配置时在这里指明 Spring 配置文件的地址-->
+    <!--这里的是Spring与Web结合的一个配置-->
+    <!--感觉在这里放一些通用的 Spring 类比较好-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:RootSpringContext.xml</param-value>
+    </context-param>
+
+    <!--配置 Spring MVC 的 DsipatcherServlet ，用来接受 Tomcat 的 http 请求并进行分发-->
+    <!--这里会自动从 WEB-INF 目录下的一个 xml 里加载Spring的应用上下文，使用的xml名称取决于这里的 servlet-name 。此处默认为 spring-mvc-servlet.xml-->
+    <servlet>
+        <servlet-name>spring-mvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <!--感觉在这里放 Spring mvc 的配置比较好，毕竟这里可以从上面的上下文读东西，上面的上下文没法访问这里的上下文-->
+            <param-value>classpath:SpringMVC.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>spring-mvc</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+</web-app>
