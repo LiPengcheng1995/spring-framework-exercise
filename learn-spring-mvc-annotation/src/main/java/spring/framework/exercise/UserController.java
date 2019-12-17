@@ -1,6 +1,8 @@
 package spring.framework.exercise;
 
 import com.alibaba.fastjson.JSON;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +19,12 @@ import org.springframework.web.servlet.ModelAndView;
  * Description:
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/${hehe}/user")
+@PropertySources(
+        value = {
+                @PropertySource(value = {"classpath:test.properties"})
+        }
+)
 public class UserController {
 
     @RequestMapping(path = "/{id}",method = RequestMethod.GET)
