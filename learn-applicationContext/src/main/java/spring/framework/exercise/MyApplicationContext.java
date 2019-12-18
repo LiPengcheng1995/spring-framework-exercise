@@ -1,13 +1,18 @@
 package spring.framework.exercise;
 
 import com.alibaba.fastjson.JSON;
+import org.springframework.cglib.proxy.Factory;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
+import org.springframework.core.DecoratingProxy;
+import org.springframework.util.ClassUtils;
 import spring.framework.exercise.domain.Person;
 import spring.framework.exercise.domain.School;
+import spring.framework.exercise.test.ClassA;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Package: spring.framework.exercise
@@ -22,6 +27,11 @@ public class MyApplicationContext {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-context.xml");
         School school = applicationContext.getBean("ASchool", School.class);
         System.out.println("取到学校: "+school.getName());
+        Set<Class<?>>  x = ClassUtils.getAllInterfacesForClassAsSet(school.getClass());
+        if (school instanceof DecoratingProxy){
+            Class y = ((DecoratingProxy) school).getDecoratedClass();
+            System.out.println();
+        }
         List<Person> personList = school.getPerson();
         for (Person person : personList){
             System.out.println("-------------- 拿到人员： "+person.getName());

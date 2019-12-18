@@ -24,11 +24,11 @@ public class ASchool implements School {
 
 //    @Autowired
 //    @Resource(name = "testBean")
-    @Resource
+//    @Resource
     private Person testBean;
 
 //    @Autowired
-    //    @Resource
+        @Resource
     private Person teacher;
 
 //    @Autowired
