@@ -21,6 +21,7 @@
         <module>learn-spring-mvc</module>
         <module>learn-applicationContext</module>
         <module>learn-spring-mvc-annotation</module>
+        <module>learn-class-load</module>
     </modules>
 
     <properties>
