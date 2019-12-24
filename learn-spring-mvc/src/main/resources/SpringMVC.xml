@@ -3,6 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--此文件在 web.xml 中的 servlet 配置中指明-->
+    <!--用来配置和 mvc 映射相关的配置项即可，专门将 mvc 摘出去-->
+
     <bean id="userController" class="UserController"/>
 
     <bean id="simpleUrlHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
@@ -11,5 +14,10 @@
                 <prop key="/user">userController</prop>
             </props>
         </property>
+    </bean>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
 </beans>
