@@ -1,16 +1,11 @@
 package spring.framework.exercise;
 
 import com.alibaba.fastjson.JSON;
-import org.springframework.cglib.proxy.Factory;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.core.DecoratingProxy;
 import org.springframework.util.ClassUtils;
 import spring.framework.exercise.domain.Person;
 import spring.framework.exercise.domain.School;
-import spring.framework.exercise.test.ClassA;
-
 import java.util.List;
 import java.util.Set;
 

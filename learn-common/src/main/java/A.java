@@ -1,5 +1,3 @@
-package spring.framework.exercise.test;
-
 import java.io.Serializable;
 
 /**

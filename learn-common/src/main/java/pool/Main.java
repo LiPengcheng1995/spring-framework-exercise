@@ -1,14 +1,12 @@
-package spring.framework.exercise.test.pool;
+package pool;
 
 import java.util.Observable;
 import java.util.Observer;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 /**
- * Package: spring.framework.exercise.test.pool
+ * Package: pool
  * User: 李鹏程
  * Email: lipengcheng3@jd.com
  * Date: 2019/10/31

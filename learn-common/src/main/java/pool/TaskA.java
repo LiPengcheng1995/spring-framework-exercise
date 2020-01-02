@@ -1,7 +1,7 @@
-package spring.framework.exercise.test.pool;
+package pool;
 
 /**
- * Package: spring.framework.exercise.test.pool
+ * Package: pool
  * User: 李鹏程
  * Email: lipengcheng3@jd.com
  * Date: 2019/10/31
