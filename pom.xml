@@ -23,6 +23,7 @@
         <module>learn-spring-mvc-annotation</module>
         <module>learn-class-load</module>
         <module>learn-common</module>
+        <module>learn-spring-annotation</module>
     </modules>
 
     <properties>
