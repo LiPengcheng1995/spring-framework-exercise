@@ -34,7 +34,7 @@ public class MyApplicationContext {
 //            System.out.println("-------------- 人员开始工作： "+person.work());
 //
 //        }
-        System.out.println("学校中的老师: "+JSON.toJSONString(school.getPerson()));
+//        System.out.println("学校中的老师: "+JSON.toJSONString(school.getPerson()));
 
     }
 }
