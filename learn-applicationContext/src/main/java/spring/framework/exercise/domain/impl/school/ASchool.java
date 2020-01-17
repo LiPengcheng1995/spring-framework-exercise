@@ -41,7 +41,7 @@ public class ASchool implements School {
     @Override
     public String getName() {
 //        return schoolName;
-        return  schoolName+ JSON.toJSONString(getPerson());
+        return  schoolName+ JSON.toJSONString(this.getPerson());
     }
 
     @haha
