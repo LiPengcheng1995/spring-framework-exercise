@@ -1,8 +1,10 @@
 package spring.framework.exercise.domain.impl.school;
 
+import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import spring.framework.exercise.aop.haha;
 import spring.framework.exercise.domain.Person;
 import spring.framework.exercise.domain.School;
 
@@ -32,14 +34,17 @@ public class ASchool implements School {
     private Person teacher;
 
 //    @Autowired
-    //    @Resource
+        @Resource
     private List<Person> personList;
 
+    @haha
     @Override
     public String getName() {
-        return schoolName;
+//        return schoolName;
+        return  schoolName+ JSON.toJSONString(getPerson());
     }
 
+    @haha
     @Override
     public List<Person> getPerson() {
         return personList;

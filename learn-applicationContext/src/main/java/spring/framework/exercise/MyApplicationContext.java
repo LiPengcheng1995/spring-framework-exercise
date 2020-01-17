@@ -22,17 +22,19 @@ public class MyApplicationContext {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-context.xml");
         School school = applicationContext.getBean("ASchool", School.class);
         System.out.println("取到学校: "+school.getName());
-        Set<Class<?>>  x = ClassUtils.getAllInterfacesForClassAsSet(school.getClass());
-        if (school instanceof DecoratingProxy){
-            Class y = ((DecoratingProxy) school).getDecoratedClass();
-            System.out.println();
-        }
-        List<Person> personList = school.getPerson();
-        for (Person person : personList){
-            System.out.println("-------------- 拿到人员： "+person.getName());
-            System.out.println(JSON.toJSONString(person));
-            System.out.println("-------------- 人员开始工作： "+person.work());
+//        Set<Class<?>>  x = ClassUtils.getAllInterfacesForClassAsSet(school.getClass());
+//        if (school instanceof DecoratingProxy){
+//            Class y = ((DecoratingProxy) school).getDecoratedClass();
+//            System.out.println();
+//        }
+//        List<Person> personList = school.getPerson();
+//        for (Person person : personList){
+//            System.out.println("-------------- 拿到人员： "+person.getName());
+//            System.out.println(JSON.toJSONString(person));
+//            System.out.println("-------------- 人员开始工作： "+person.work());
+//
+//        }
+        System.out.println("学校中的老师: "+JSON.toJSONString(school.getPerson()));
 
-        }
     }
 }

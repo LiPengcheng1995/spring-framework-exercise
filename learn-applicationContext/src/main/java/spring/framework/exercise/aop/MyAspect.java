@@ -4,6 +4,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
@@ -20,16 +21,17 @@ import java.util.Objects;
 @Aspect
 @Component
 public class MyAspect {
-    @Pointcut("execution(* spring.framework.exercise.domain.*.*(..))")
+    @Pointcut("@annotation(spring.framework.exercise.aop.haha)")
     public void pointCut(){
 
     }
 
     @Around("spring.framework.exercise.aop.MyAspect.pointCut()")
     public Object process(ProceedingJoinPoint pjp) throws Throwable {
-        System.out.println("调用前");
+        String name = ((MethodSignature) pjp.getSignature()).getMethod().getName();
+        System.out.println("调用前,methodName:{}"+name);
         Object x = pjp.proceed();
-        System.out.println("调用后");
+        System.out.println("调用后,methodName:{}"+name);
         return x;
     }
 }
