@@ -22,6 +22,9 @@ public class MyApplicationContext {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-context.xml");
         School school = applicationContext.getBean("ASchool", School.class);
         System.out.println("取到学校: "+school.getName());
+
+        Object x = applicationContext.getBean("haha");
+        Object y = applicationContext.getBean("hehe");
 //        Set<Class<?>>  x = ClassUtils.getAllInterfacesForClassAsSet(school.getClass());
 //        if (school instanceof DecoratingProxy){
 //            Class y = ((DecoratingProxy) school).getDecoratedClass();
