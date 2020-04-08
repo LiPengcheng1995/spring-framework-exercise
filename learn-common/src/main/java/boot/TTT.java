@@ -1,5 +1,8 @@
 package boot;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.annotation.JSONField;
+import lombok.Data;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
@@ -7,6 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,16 +21,20 @@ import java.util.List;
  * Time: 20:43
  * Description:
  */
+@Data
 @Lpc("haha")
 @Lpc("hehe")
 @Component("#{BusinessTypeEnum.JW_STRORE_ORDER}")
 public class TTT implements InitializingBean, ApplicationContextAware,T {
-    @Value("${hehe}")
-    private List<Integer> jj;
+    private List<Integer> jj=new ArrayList<>();
+
+    @JSONField(serialize = false)
+    private String orderWithCartXml="sdfaf";
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println();
+        jj.add(1);
+        System.out.println(JSON.toJSONString(this));
     }
 
     @Override
@@ -41,4 +49,5 @@ public class TTT implements InitializingBean, ApplicationContextAware,T {
         System.out.println();
 
     }
+
 }

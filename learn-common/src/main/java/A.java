@@ -1,4 +1,6 @@
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Package: spring.framework.exercise.test
@@ -17,5 +19,15 @@ public class A implements Serializable {
 
     public void setA(String a) {
         this.a = a;
+    }
+
+    public static void main(String[] args) {
+        List<Integer> x = new ArrayList<>();
+        for (int i=0;i<10;i++){
+            x.add(i);
+        }
+        for (Integer a:x){
+            x.remove(a);
+        }
     }
 }
