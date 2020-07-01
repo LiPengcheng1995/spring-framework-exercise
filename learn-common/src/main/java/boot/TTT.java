@@ -26,14 +26,15 @@ import java.util.List;
 @Lpc("hehe")
 @Component("#{BusinessTypeEnum.JW_STRORE_ORDER}")
 public class TTT implements InitializingBean, ApplicationContextAware,T {
-    private List<Integer> jj=new ArrayList<>();
+    @Value("${hehe}")
+    private List<String> jj=new ArrayList<>();
 
     @JSONField(serialize = false)
     private String orderWithCartXml="sdfaf";
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        jj.add(1);
+        jj.add("1");
         System.out.println(JSON.toJSONString(this));
     }
 
@@ -48,6 +49,16 @@ public class TTT implements InitializingBean, ApplicationContextAware,T {
         }
         System.out.println();
 
+    }
+
+    public static void main(String[] args) {
+        List<String> x = new ArrayList<>();
+        x.add("1");
+        x.add("1");
+        x.add("1");
+
+        List<String> y = x.subList(0, Math.min(10, x.size()));
+        System.out.println();
     }
 
 }
