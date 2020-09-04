@@ -1,5 +1,7 @@
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import test.AAAA;
 import test.TestA;
+import test.ZhangSan;
 
 /**
  * Package: PACKAGE_NAME
@@ -12,8 +14,13 @@ import test.TestA;
 public class Application {
     public static void main(String args[]) {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
-        TestA a = applicationContext.getBean("testA", TestA.class);
-        System.out.println();
+        ZhangSan a = applicationContext.getBean("zhangSan", ZhangSan.class);
+        System.out.println(a.getBuMd().hashCode());
+        AAAA b = applicationContext.getBean("buMd", AAAA.class);
+        AAAA c = applicationContext.getBean("auMd", AAAA.class);
+
+        System.out.println(b.hashCode());
+        System.out.println(c.hashCode());
 
     }
 }
