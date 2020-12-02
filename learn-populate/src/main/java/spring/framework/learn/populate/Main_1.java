@@ -19,6 +19,6 @@ public class Main_1 {
         System.out.println(a.getField_a_1());
         System.out.println(a.getField_a_2());
         System.out.println(a.getField_a_3());
-        System.out.println(a.getB().getField_b_1());
+//        System.out.println(a.getB().getField_b_1());
     }
 }

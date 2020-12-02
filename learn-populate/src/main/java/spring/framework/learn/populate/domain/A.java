@@ -40,13 +40,7 @@ public class A implements InitializingBean {
         this.field_a_3 = field_a_3;
     }
 
-    public B getB() {
-        return b;
-    }
 
-    public void setB(B b) {
-        this.b = b;
-    }
 
     public void afterPropertiesSet() throws Exception {
         System.out.println("正在调用 A 的 InitializingBean 的初始化钩子");
