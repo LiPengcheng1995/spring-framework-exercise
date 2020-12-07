@@ -25,7 +25,6 @@ public class MyApplicationContext {
 
         Object x = applicationContext.getBean("haha");
         Object y = applicationContext.getBean("hehe");
-        System.arraycopy();
 //        Set<Class<?>>  x = ClassUtils.getAllInterfacesForClassAsSet(school.getClass());
 //        if (school instanceof DecoratingProxy){
 //            Class y = ((DecoratingProxy) school).getDecoratedClass();

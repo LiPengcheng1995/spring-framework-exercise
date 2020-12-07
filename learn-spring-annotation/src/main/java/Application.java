@@ -1,3 +1,4 @@
+import com.alibaba.fastjson.JSON;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import test.AAAA;
 import test.TestA;
@@ -15,6 +16,8 @@ public class Application {
     public static void main(String args[]) {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
         ZhangSan a = applicationContext.getBean("zhangSan", ZhangSan.class);
+        System.out.println(JSON.toJSONString(a));
+
         System.out.println(a.getBuMd().hashCode());
         AAAA b = applicationContext.getBean("buMd", AAAA.class);
         AAAA c = applicationContext.getBean("auMd", AAAA.class);
