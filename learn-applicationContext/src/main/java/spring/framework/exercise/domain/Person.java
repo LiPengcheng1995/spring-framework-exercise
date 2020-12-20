@@ -1,5 +1,7 @@
 package spring.framework.exercise.domain;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Package: spring.framework.exercise.domain
  * User: 李鹏程
@@ -8,6 +10,7 @@ package spring.framework.exercise.domain;
  * Time: 20:20
  * Description:
  */
+@Component
 public interface Person {
     String getName();
 

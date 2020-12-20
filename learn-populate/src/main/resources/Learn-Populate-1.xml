@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+        default-autowire="byName">
 
+<!--    经验证，default-autowire 只对有 setter 方法的属性生效-->
     <bean id="a" class="spring.framework.learn.populate.domain.A" autowire="byName">
         <property name="field_a_1" value="这个是a_1的值"/>
         <property name="field_a_2" value="这个是a_2的值"/>

@@ -1,5 +1,6 @@
 package spring.framework.exercise.domain.impl.person;
 
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import spring.framework.exercise.domain.Person;
@@ -15,9 +16,7 @@ import spring.framework.exercise.domain.Person;
  * @author lipengcheng3
  */
 @Order(2)
-
-@Component
-public class Teacher implements Person {
+public class Teacher implements Person, InitializingBean {
     @Override
     public String getName() {
         return "我是一个老师";
@@ -26,5 +25,11 @@ public class Teacher implements Person {
     @Override
     public String work() {
         return "讲课";
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("Teacher:"+System.currentTimeMillis());
+
     }
 }

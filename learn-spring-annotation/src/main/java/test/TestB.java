@@ -1,7 +1,5 @@
 package test;
 
-import org.springframework.stereotype.Component;
-
 /**
  * Package: PACKAGE_NAME
  * User: 李鹏程
@@ -12,9 +10,9 @@ import org.springframework.stereotype.Component;
  */
 //@LPC
 //@Component
-public class TestA implements AAAA {
+public class TestB implements AAAA {
     @Override
     public int hashCode() {
-        return 1;
+        return 2;
     }
 }
