@@ -22,13 +22,12 @@ public class UserTemplate {
 
     private static String sql = "INSERT INTO learn.form (creator, is_deleted, modifier, business_id, form_name, template_id, creation_code) VALUES (?,?,?,?,?,?,?)";
 
-    private ThreadLocal<PreparedStatement> UPDATE_PREPARED_SQL = new ThreadLocal<>();
 
     public Long saveUser(User user) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         int result = jdbcTemplate.update(
                 con -> {
-                    PreparedStatement ps = UPDATE_PREPARED_SQL.get() == null ? con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS) : UPDATE_PREPARED_SQL.get();
+                    PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
                     ps.setString(1, user.getCreator());
                     ps.setBoolean(2, user.isDeleted());
                     ps.setString(3, user.getModifier());
