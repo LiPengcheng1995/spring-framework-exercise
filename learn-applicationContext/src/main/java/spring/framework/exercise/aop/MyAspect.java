@@ -34,4 +34,13 @@ public class MyAspect {
         System.out.println("调用后,methodName:{}"+name);
         return x;
     }
+
+    @Around("spring.framework.exercise.aop.MyAspect.pointCut()")
+    public Object process1(ProceedingJoinPoint pjp) throws Throwable {
+        String name = ((MethodSignature) pjp.getSignature()).getMethod().getName();
+        System.out.println("调用前1,methodName:{}"+name);
+        Object x = pjp.proceed();
+        System.out.println("调用后1,methodName:{}"+name);
+        return x;
+    }
 }
