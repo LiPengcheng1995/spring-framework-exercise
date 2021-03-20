@@ -20,31 +20,23 @@ public class UserTemplate {
 
     private JdbcTemplate jdbcTemplate;
 
-    public JdbcTemplate getJdbcTemplate() {
-        return jdbcTemplate;
-    }
+    private static String sql = "INSERT INTO learn.form (creator, is_deleted, modifier, business_id, form_name, template_id, creation_code) VALUES (?,?,?,?,?,?,?)";
 
-    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
+    private ThreadLocal<PreparedStatement> UPDATE_PREPARED_SQL = new ThreadLocal<>();
 
     public Long saveUser(User user) {
-        String sql = "INSERT INTO learn.form (creator, is_deleted, modifier, business_id, form_name, template_id, creation_code) VALUES (?,?,?,?,?,?,?)";
         KeyHolder keyHolder = new GeneratedKeyHolder();
         int result = jdbcTemplate.update(
-                new PreparedStatementCreator() {
-                    public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
-                        PreparedStatement ps = getJdbcTemplate().getDataSource()
-                                .getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-                        ps.setString(1, user.getCreator());
-                        ps.setBoolean(2, user.isDeleted());
-                        ps.setString(3, user.getModifier());
-                        ps.setLong(4, user.getBusinessId());
-                        ps.setString(5, user.getFormName());
-                        ps.setLong(6, user.getTemplateId());
-                        ps.setString(7, user.getCreationCode());
-                        return ps;
-                    }
+                con -> {
+                    PreparedStatement ps = UPDATE_PREPARED_SQL.get() == null ? con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS) : UPDATE_PREPARED_SQL.get();
+                    ps.setString(1, user.getCreator());
+                    ps.setBoolean(2, user.isDeleted());
+                    ps.setString(3, user.getModifier());
+                    ps.setLong(4, user.getBusinessId());
+                    ps.setString(5, user.getFormName());
+                    ps.setLong(6, user.getTemplateId());
+                    ps.setString(7, user.getCreationCode());
+                    return ps;
                 }, keyHolder);
         if (result != 0) {
             System.out.println("插入数据成功");
@@ -55,6 +47,14 @@ public class UserTemplate {
 
     public void updateUserById(User user) {
 
+    }
+
+    public JdbcTemplate getJdbcTemplate() {
+        return jdbcTemplate;
+    }
+
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     public List<User> getByCreator(String creator) {
