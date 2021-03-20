@@ -8,9 +8,9 @@
         <!-- 加载jdbc驱动 -->
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
         <!-- jdbc连接地址 -->
-        <property name="jdbcUrl" value="jdbc:mysql://104.248.236.89:3306/learn"/>
+        <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/learn"/>
         <!-- 连接数据库的用户名 -->
-        <property name="user" value="lpc_test"/>
+        <property name="user" value="root"/>
         <!-- 连接数据库的密码 -->
         <property name="password" value="12345aA)"/>
         <!-- 数据库的初始化连接数 -->
