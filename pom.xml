@@ -24,6 +24,7 @@
         <module>learn-class-load</module>
         <module>learn-common</module>
         <module>learn-spring-annotation</module>
+        <module>learn-springboot-configuration</module>
     </modules>
 
     <properties>
