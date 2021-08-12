@@ -20,6 +20,7 @@ import org.springframework.context.annotation.ImportResource;
 public class SpringProviderMain {
     public static void main(String[] args) {
         SpringApplication.run(SpringProviderMain.class, args);
+        log.info("当前目录:{}",System.getProperty("user.dir"));
 //        try {
 //            System.in.read();
 //        } catch (Throwable e) {

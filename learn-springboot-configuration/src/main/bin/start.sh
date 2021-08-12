@@ -32,6 +32,8 @@ if [ -z "$CONSOLE_LOG" ] ; then
     CONSOLE_LOG="./out.log"
 fi
 
+echo "JAVA_OPTS++++"$JAVA_OPTS
+
 #nohup
  "$JAVACMD" \
   $JAVA_OPTS \
