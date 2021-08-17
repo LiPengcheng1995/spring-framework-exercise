@@ -45,31 +45,32 @@
     <build>
         <plugins>
             <plugin>
+                <!--plugin的名字，这里是写死的-->
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <archive>
                         <manifest>
+                            <!--启动主类地址，这里根据项目自己写-->
                             <mainClass>com.jd.wj.order.server.WjServerSpringApplication</mainClass>
                         </manifest>
                     </archive>
-                    <!--                    jdq需要-->
-                    <!--                    <descriptorRefs>-->
-                    <!--                        <descriptorRef>jar-with-dependencies</descriptorRef>-->
-                    <!--                    </descriptorRefs>-->
+                    <!--assembly 打包需要哪些定制，那些定制配置都在一个xml文件中，这里指向那个xml地址-->
                     <descriptors>
                         <descriptor>src/main/assemble/package.xml</descriptor>
                     </descriptors>
                 </configuration>
+                <!--assembly 配置执行器-->
                 <executions>
                     <execution>
                         <id>make-assembly</id>
-                        <phase>package</phase>
+                        <phase>package</phase><!--在 package 生命周期进行执行-->
                         <goals>
-                            <goal>single</goal>
+                            <goal>single</goal><!--只执行一次-->
                         </goals>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
+        <finalName>abc-finalName</finalName>
     </build>
 </project>

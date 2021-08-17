@@ -39,7 +39,8 @@ echo "JAVA_OPTS++++"$JAVA_OPTS
   $JAVA_OPTS \
   $OPTS_MEMORY \
   -classpath "$CLASSPATH" \
-  -Dbasedir="$BASEDIR" \
   -Dfile.encoding="UTF-8" \
   com.lpc.SpringProviderMain \
  "$@" > $CONSOLE_LOG 2>&1 &
+
+# -Dbasedir="$BASEDIR" 这个参数貌似没啥用
