@@ -1,6 +1,7 @@
 package spring.framework.exercise.domain.impl.school;
 
 import com.alibaba.fastjson.JSON;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -20,33 +21,42 @@ import java.util.List;
  * Description:
  */
 @Component
-public class ASchool implements School {
-//    @Value("${school.a.name}")
+public class ASchool implements School, InitializingBean {
+    //    @Value("${school.a.name}")
     private String schoolName;
 
-//    @Autowired
+    //    @Autowired
 //    @Resource(name = "testBean")
 //    @Resource
     private Person testBean;
 
-//    @Autowired
-        @Resource
+    //    @Autowired
+//    @Resource
     private Person teacher;
 
-//    @Autowired
-        @Resource
+    //    @Autowired
+    @Resource
     private List<Person> personList;
+
+    @Resource
+    private School ASchool;
 
     @haha
     @Override
     public String getName() {
 //        return schoolName;
-        return  schoolName+ JSON.toJSONString(this.getPerson());
+        ASchool.getPerson();
+        return schoolName + JSON.toJSONString(this.getPerson());
     }
 
     @haha
     @Override
     public List<Person> getPerson() {
         return personList;
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println();
     }
 }

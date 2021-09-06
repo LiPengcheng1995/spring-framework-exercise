@@ -15,6 +15,7 @@ import spring.framework.exercise.domain.Person;
  * @date 2020-03-20 17:26
  * @author lipengcheng3
  */
+@Component
 @Order(2)
 public class Teacher implements Person, InitializingBean {
     @Override
