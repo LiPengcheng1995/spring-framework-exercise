@@ -1,0 +1,12 @@
+一、前置问题
+URLClassLoader和URLClassPath的关系？
+URLClassPath的用处？
+如何处理不同类型的资源，如zip,jar和普通文件夹？
+二、URLClassLoader
+URLClassLoader的作用是依赖URLClassPath来定位读取资源，可参考文章类加载机制
+
+
+作者：此间有道
+链接：https://www.jianshu.com/p/1b76517bb226
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

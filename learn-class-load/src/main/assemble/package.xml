@@ -1,0 +1,42 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+    <!--这里配置的是包名的后缀，最终打包的名字是 finalName-id -->
+    <id>package</id>
+    <!--指定打包类型-->
+    <formats>
+        <!--zip、tar、tar.gz (or tgz)、tar.bz2 (or tbz2)、jar、dir、war-->
+        <format>dir</format><!--打一个目录-->
+        <format>zip</format><!--打一个压缩包-->
+    </formats>
+    <!--指定是否包含打包层目录，就是在打包结果 finalName-id 里是直接放目录还是放一个 finalName 文件夹，那里面再放目录-->
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <!--指定要包含的文件集-->
+    <fileSets>
+        <fileSet>
+            <!--源代码的目录-->
+            <directory>src/main/bin</directory>
+            <!--打包结果的目录-->
+            <outputDirectory>bin</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/runDir</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+    </fileSets>
+    <!--定制 jar 包的打包方式-->
+    <dependencySets>
+        <dependencySet>
+            <!--打包结果输出目录-->
+            <outputDirectory>lib</outputDirectory>
+            <scope>runtime</scope>
+            <!-- 这一般不用，这里可以指定通过 groupId:artifactId 的方式 只引入/只排除 某些特殊的包-->
+<!--            <includes>-->
+<!--                <include>${project.groupId}:${project.artifactId}</include>-->
+<!--            </includes>-->
+<!--            <excludes>-->
+<!--                <exclude>${project.groupId}:${project.artifactId}</exclude>-->
+<!--            </excludes>-->
+        </dependencySet>
+    </dependencySets>
+</assembly>

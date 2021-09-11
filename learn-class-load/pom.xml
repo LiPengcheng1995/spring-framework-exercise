@@ -2,14 +2,65 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>com.lpc.learn.spring.framework</artifactId>
-        <groupId>spring.framework.exercise</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>spring.framework.exercise</groupId>
     <artifactId>learn-class-load</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
+    <dependencies>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.32</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
+        <!--其他-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.70</version>
+        </dependency>
+    </dependencies>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                &lt;!&ndash;plugin的名字，这里是写死的&ndash;&gt;-->
+<!--                <artifactId>maven-assembly-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <archive>-->
+<!--                        <manifest>-->
+<!--                            &lt;!&ndash;启动主类地址，这里根据项目自己写&ndash;&gt;-->
+<!--                            <mainClass>com.lipengcheng.learn.loader.resource.LearnResourceLoad</mainClass>-->
+<!--                        </manifest>-->
+<!--                    </archive>-->
+<!--                    &lt;!&ndash;assembly 打包需要哪些定制，那些定制配置都在一个xml文件中，这里指向那个xml地址&ndash;&gt;-->
+<!--                    <descriptors>-->
+<!--                        <descriptor>src/main/assemble/package.xml</descriptor>-->
+<!--                    </descriptors>-->
+<!--                </configuration>-->
+<!--                &lt;!&ndash;assembly 配置执行器&ndash;&gt;-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>make-assembly</id>-->
+<!--                        <phase>package</phase>&lt;!&ndash;在 package 生命周期进行执行&ndash;&gt;-->
+<!--                        <goals>-->
+<!--                            <goal>single</goal>&lt;!&ndash;只执行一次&ndash;&gt;-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--        <finalName>abc-finalName</finalName>-->
+<!--    </build>-->
 </project>
